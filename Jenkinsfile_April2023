@@ -6,8 +6,6 @@ node{
  stage('2MavenBuild'){
    sh "${mavenHome}/bin/mvn package"
    }
-   
-   /*
    stage('3codeQuality'){
    sh "${mavenHome}/bin/mvn sonar:sonar"
    }
@@ -26,5 +24,4 @@ node{
     stage('7deploy2Prod'){
    deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://34.234.193.106:8080/')], contextPath: null, war: 'target/*war'
   }
-  */
  }
